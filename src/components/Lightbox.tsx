@@ -40,7 +40,7 @@ export default function Lightbox({
             {item.videoUrl ? (
               <video
                 src={item.videoUrl}
-                poster={item.imageUrl}
+                poster={['g5', 'g6', 'g7', 'g8'].includes(item.id) ? undefined : item.imageUrl}
                 controls
                 autoPlay
                 playsInline

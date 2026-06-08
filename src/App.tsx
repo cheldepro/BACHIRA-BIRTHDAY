@@ -807,7 +807,7 @@ export default function App() {
                             {/* Native HTML5 Video Element with poster backing */}
                             <video
                               src={photo.videoUrl}
-                              poster={photo.imageUrl}
+                              poster={['g5', 'g6', 'g7', 'g8'].includes(photo.id) ? undefined : photo.imageUrl}
                               loop
                               playsInline
                               preload="auto"
