@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #ec4899;
+  --color-on-primary: #ffffff;
+  --color-secondary: #db2777;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #fce7f3;
+  --color-on-secondary-container: #9d174d;
+  --color-background: #fff1f2;
+  --color-surface: #fff5f5;
+  --color-on-surface: #4c0519;
+  --color-surface-variant: #ffe4e6;
+  --color-on-surface-variant: #881337;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #fff1f2;
+  --color-surface-container: #ffe4e6;
+  --color-surface-container-high: #fbcfe8;
+  --color-surface-container-highest: #f472b6;
+  --color-tertiary: #fda4af;
+  --color-tertiary-container: #ffe4e6;
+  --color-on-tertiary-container: #9f1239;
+  --color-outline: #ec4899;
+  --color-outline-variant: #fbcfe8;
+
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, Cambria, serif;
+  --font-handwriting: "Caveat", "Dancing Script", cursive;
+  --font-epilogue: "Epilogue", sans-serif;
+}
+
+/* Tactile & Skeuomorphic Custom Utilities */
+.book-canvas {
+  background-color: #fff1f2;
+  background-image: radial-gradient(#fbcfe8 0.9px, transparent 0.9px);
+  background-size: 24px 24px;
+}
+
+.parchment-texture {
+  background-color: #fffafb;
+  background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+}
+
+.deckled-edge {
+  clip-path: polygon(
+    0% 0%, 5% 1%, 10% 0%, 15% 1.5%, 20% 0%, 25% 1%, 30% 0%, 35% 1.5%, 40% 0%, 45% 1%, 50% 0%, 55% 1.5%, 60% 0%, 65% 1%, 70% 0%, 75% 1.5%, 80% 0%, 85% 1%, 90% 0%, 95% 1.5%, 100% 0%, 
+    99.2% 5%, 100% 10%, 98.8% 15%, 100% 20%, 99.2% 25%, 100% 30%, 98.8% 35%, 100% 40%, 99.2% 45%, 100% 50%, 98.8% 55%, 100% 60%, 99.2% 65%, 100% 70%, 98.8% 75%, 100% 80%, 99.2% 85%, 100% 90%, 98.8% 95%, 100% 100%, 
+    95% 99%, 90% 100%, 85% 98.8%, 80% 100%, 75% 99%, 70% 100%, 65% 98.8%, 60% 100%, 55% 99%, 50% 100%, 45% 98.8%, 40% 100%, 35% 99%, 30% 100%, 25% 98.8%, 20% 100%, 15% 99%, 10% 100%, 5% 98.8%, 0% 100%, 
+    1% 95%, 0% 90%, 1.2% 85%, 0% 80%, 1% 75%, 0% 70%, 1.2% 65%, 0% 60%, 1% 55%, 0% 50%, 1.2% 45%, 0% 40%, 1% 35%, 0% 30%, 1.2% 25%, 0% 20%, 1% 15%, 0% 10%, 1.2% 5%
+  );
+}
+
+.paper-stack {
+  box-shadow: 
+    1px 1px 0px 0px #ffe4e6,
+    3px 3px 0px 0px #fbcfe8,
+    6px 6px 15px -4px rgba(219, 39, 119, 0.2);
+}
+
+.wax-seal {
+  background: radial-gradient(circle at 35% 35%, #fbcfe8, #ec4899, #be185d);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3), 2px 2px 5px rgba(0,0,0,0.4);
+}
+
+.gutter-shadow {
+  background: linear-gradient(to right, rgba(0,0,0,0.06) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, rgba(0,0,0,0.06) 100%);
+}
+
+.polaroid-tilt-left {
+  transform: rotate(-1.5deg);
+}
+
+.polaroid-tilt-right {
+  transform: rotate(1.8deg);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #f472b6;
+  border-radius: 9999px;
+}
+
+.gold-foil-text {
+  background: linear-gradient(to bottom, #9d174d 15%, #f472b6 50%, #be185d 85%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0.5px 0.5px 0.5px rgba(255, 255, 255, 0.4);
+}
+
+@keyframes drift {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(110vh) scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+    transform: translateY(80vh) scale(1) rotate(15deg);
+  }
+  50% {
+    opacity: 0.95;
+    transform: translateY(40vh) scale(1.1) rotate(-15deg);
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-15vh) scale(0.6) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.note-float {
+  animation: drift 6s ease-in-out infinite;
+}
+
+.note-float-delayed {
+  animation: drift 7s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.note-float-more {
+  animation: drift 5s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+/* Material symbols utility styling */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.material-fill {
+  font-variation-settings: 'FILL' 1;
+}

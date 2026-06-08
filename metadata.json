@@ -1,0 +1,6 @@
+{
+  "name": "Bachira's Birthday Book",
+  "description": "A nostalgic, skeuomorphic, and romantic digital scrapbook celebrating precious memories, sweet words, and shared adventures for Bachira's birthday.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
